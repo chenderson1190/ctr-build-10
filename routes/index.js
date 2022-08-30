@@ -1,6 +1,14 @@
 var express = require('express');
 var router = express.Router();
 
+// Fire Store access Code
+const Firestore = require('@google-cloud/firestore');
+
+const db = new Firestore({
+  projectId: 'ctr-build-10',
+  keyFilename: '/ctr-build-10-945db5e1aa0d.json',
+});
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
