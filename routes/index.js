@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 
 router.get('/list', function(req, res, next) {
   // TODO: Make List Controller
-  res.render('list', {title: 'list'});
+  res.render('list', {title: 'Hello World!'});
 });
 
 router.get('/favorites', function(req, res, next) {
