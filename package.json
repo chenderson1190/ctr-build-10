@@ -1,0 +1,19 @@
+{
+  "name": "ctr-build-10",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenderson1190/ctr-build-10.git"
+  },
+  "author": "Isaac Attuah, CJ Henderson, Iman Hoque, Eden Rorabaugh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chenderson1190/ctr-build-10/issues"
+  },
+  "homepage": "https://github.com/chenderson1190/ctr-build-10#readme"
+}
