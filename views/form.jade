@@ -1,0 +1,81 @@
+doctype html
+html(lang='en')
+  head
+    meta(http-equiv='content-type' content='text/html; charset=UTF-8')
+    meta(charset='utf-8')
+    title Form
+    // CSS only
+    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx' crossorigin='anonymous')
+  body
+    // Responsive navbar
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+      .container
+        a.navbar-brand(href='#') CTR
+        button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarSupportedContent.collapse.navbar-collapse
+          ul.navbar-nav.ms-auto.mb-2.mb-lg-0
+            li.nav-item
+              a.nav-link.active(aria-current='Home' href='#') List
+            li.nav-item
+              a.nav-link(href='#') Form
+            li.nav-item
+              a.nav-link(href='#') Favorites
+    // Page content
+    .container
+      .text-left.mt-5
+        form
+          .form-group.row
+            label.col-4.col-form-label(for='name') Name
+            .col-8
+              input#name.form-control(name='name' type='text')
+          .form-group.row.mt-4
+            label.col-4.col-form-label(for='year') Year
+            .col-8
+              input#year.form-control(name='year' type='text' required='required')
+          .form-group.row.mt-4
+            label.col-4.col-form-label(for='text3') Placement Org
+            .col-8
+              input#text3.form-control(name='text3' type='text')
+          .form-group.row.mt-4
+            label.col-4.col-form-label(for='text4') Placement Role
+            .col-8
+              input#text4.form-control(name='text4' type='text')
+          .form-group.row.mt-4
+            label.col-4.col-form-label(for='cohort') Cohort
+            .col-8
+              select#cohort.custom-select(name='cohort' required='required')
+                option(value="18'07") 18'07
+                option(value="19'07") 19'07
+                option(value="19'10") 19'10
+                option(value="20'08") 20'08
+                option(value="21'07-AUS") 21'07-AUS
+                option(value="21'08-ATL") 21'08-ATL
+                option(value="21'08-DUB") 21'08-DUB
+                option(value="21'09-AUS") 21'09-AUS
+                option(value="22'06-ATL") 22'06-AUS
+                option(value="22'07-DUB") 22'07-DUB
+                option(value="22'09-AUS") 22'09-AUS
+          .form-group.row.mt-4
+            label.col-4.col-form-label(for='select') Cohort Manager
+            .col-8
+              select#select.custom-select(name='select' required='required')
+                option(value='John') jwohn
+                option(value='Juno') junos
+                option(value='Samantha') samantha
+                option(value='Ale') asciuto
+          .form-group.row.mt-4
+            label.col-4.col-form-label(for='moma_link') MOMA Link
+            .col-8
+              input#moma_link.form-control(name='moma_link' type='text' required='required')
+          .form-group.row.mt-4
+            label.col-4.col-form-label(for='moma_image') MOMA Image
+            .col-8
+              input#moma_image.form-control(name='moma_image' type='text' required='required')
+          .form-group.row.mt-4
+            label.col-4.col-form-label(for='email') Email
+            .col-8
+              input#email.form-control(name='email' type='text')
+          .form-group.row.mt-4
+            div
+              button.btn.btn-dark(name='submit' type='submit') Submit
