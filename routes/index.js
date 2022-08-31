@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var rosterController = require('../controllers/rosterController')
 
 
 const Firestore = require('@google-cloud/firestore');
