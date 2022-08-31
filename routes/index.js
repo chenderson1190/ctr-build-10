@@ -68,6 +68,22 @@ router.get('/form', function(req, res, next) {
   res.render('form', { title: 'Form' });
 });
 
+router.post('/form', function(req, res) {
+  console.log(req.body)
+  let data = {
+    "name": req.body.name,
+    "year": req.body.year,
+    "P. Org": req.body.text3,
+    "P. Role": req.body.text4,
+    "Cohort": req.body.cohort,
+    "Cohort Manager": req.body.select,
+    "MOMA Link": req.body.moma_link,
+    "MOMA Image": req.body.moma_image,
+    "Email": req.body.email
+  }
+  console.log(data.Email)
+})
+
 router.get('/list', function(req, res, next) {
   res.render('list', {roster: ctrroster})
 })
