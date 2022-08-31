@@ -30,6 +30,21 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.post('/', async function(req, res, next){
+  console.log(req.body.username)
+  try {
+    const user = await db.collection('users').doc(req.body.username)
+    if (user.empty) {
+        return -1
+    }
+    else 
+    console.log('success')
+    res.redirect('list')
+} catch(err) {
+    console.log(err)
+}
+})
+
 
 const ctrroster = []
 getRosterData().then(function(result){
