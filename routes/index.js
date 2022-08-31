@@ -1,10 +1,16 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
+/* GET sign in page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
+
+/* GET HOME page. */
+router.get('/home', function(req, res, next) {
+  res.render('home', { title: 'Home' });
+});
+
 
 router.get('/list', function(req, res, next) {
   // TODO: Make List Controller
