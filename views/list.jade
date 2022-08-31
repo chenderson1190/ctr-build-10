@@ -1,18 +1,18 @@
 extends layout
 
-block content
-  each item in roster
-    div
-      h1=item.get('Name')
-        ul
-          li=item.get('ctr-id')
-          li=item.get('Year Start')
-          li=item.get('Cohort')
-          li=item.get('LDAP')
-          li=item.get(escape("P. Org"))
-          li=item.get("P. Role")
-          li=item.get('Cohort Manager')
-          li
-            a(href=item.get('MOMA Link')) Moma Link
-          li=item.get('MOMA Image')
-          li=item.get('Email')
+
+each item in roster
+  div
+    h1=item.get('Name')
+      ul
+        li=item.get('ctr-id')
+        li=item.get('Year Start')
+        li=item.get('Cohort')
+        li=item.get('LDAP')
+        li=item.get(escape("P. Org"))
+        li=item.get("P. Role")
+        li=item.get('Cohort Manager')
+        li
+          a(href=item.get('MOMA Link')) Moma Link
+        li=item.get('MOMA Image')
+        li=item.get('Email')
