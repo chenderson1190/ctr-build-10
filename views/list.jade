@@ -1,18 +1,23 @@
 extends layout
+link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css", integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm", crossorigin="anonymous")
 
 block content
   each item in roster
-    div
-      h1=item.get('Name')
-        ul
-          li=item.get('ctr-id')
-          li=item.get('Year Start')
-          li=item.get('Cohort')
-          li=item.get('LDAP')
-          li=item.get(escape("P. Org"))
-          li=item.get("P. Role")
-          li=item.get('Cohort Manager')
-          li
-            a(href=item.get('MOMA Link')) Moma Link
-          li=item.get('MOMA Image')
-          li=item.get('Email')
+    div(class="card", style="width: 18rem;")
+      img(src=item.get('MOMA Image'), class='card-img-top', alt='MOMA Image')
+      div(class="card-body")
+        h1(class="card-title")=item.get('Name')
+        li=item.get('ctr-id')
+        li=item.get('Year Start')
+        li=item.get('Cohort')
+        li=item.get('LDAP')
+        li=item.get(escape("P. Org"))
+        li=item.get("P. Role")
+        li=item.get('Cohort Manager')
+        li
+          a(href=item.get('MOMA Link'), class="btn btn-primaryc") Moma Link
+        li=item.get('MOMA Image')
+        li=item.get('Email')
+        li=item.get('R1 Org')
+        li=item.get('R2 Org')
+        li=item.get('R3 Org')
