@@ -5,8 +5,11 @@
  */
 
 var app = require('../app');
+var express = require('express');
 var debug = require('debug')('ctr-build-10:server');
 var http = require('http');
+
+
 
 /**
  * Get port from environment and store in Express.
@@ -14,6 +17,12 @@ var http = require('http');
 
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
+
+/**
+ * Render static pages
+ */
+
+app.use(express.static('public'))
 
 /**
  * Create HTTP server.
@@ -88,3 +97,5 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
+
+
