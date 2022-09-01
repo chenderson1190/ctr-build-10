@@ -12,7 +12,7 @@ function render_form(req, res){
 
 async function add_data(req, res){
     let data = {
-        "name": req.body.name,
+        "Name": req.body.name,
         "year": req.body.year,
         "P. Org": req.body.text3,
         "P. Role": req.body.text4,
