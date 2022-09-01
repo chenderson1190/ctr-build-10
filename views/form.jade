@@ -17,11 +17,15 @@ block bodyContent
           .form-group.row
             label.col-4.col-form-label(for='name') Name
             .col-8
-              input#name.form-control(name='name' type='text')
+              input#name.form-control(name='name' type='text' required='required')
           .form-group.row.mt-4
-            label.col-4.col-form-label(for='year') Year
+            label.col-4.col-form-label(for='ldap') LDAP
             .col-8
-              input#year.form-control(name='year' type='text' required='required')
+              input#ldap.form-control(name='ldap' type='text' required='required')
+          .form-group.row.mt-4
+            label.col-4.col-form-label(for='year') Year Start
+            .col-8
+              input#year.form-control(name='year' type='number' required='required')
           .form-group.row.mt-4
             label.col-4.col-form-label(for='text3') Placement Org
             .col-8
@@ -65,7 +69,11 @@ block bodyContent
           .form-group.row.mt-4
             label.col-4.col-form-label(for='email') Email
             .col-8
-              input#email.form-control(name='email' type='text')
+              input#email.form-control(name='email' type='text' required='required')
+          .form-group.row.mt-4
+            label.col-4.col-form-label(for='start_date') Start Date
+            .col-8
+              input#start_date.form-control(name='start_date' type='text')
           .form-group.row.mt-4
             div
               button.btn.btn-dark(name='submit' type='submit') Submit

@@ -13,14 +13,18 @@ function render_form(req, res){
 async function add_data(req, res){
     let data = {
         "Name": req.body.name,
-        "year": req.body.year,
+        "LDAP": req.body.ldap,
+        "Year Start": Number(req.body.year),
         "P. Org": req.body.text3,
         "P. Role": req.body.text4,
         "Cohort": req.body.cohort,
         "Cohort Manager": req.body.select,
         "MOMA Link": req.body.moma_link,
         "MOMA Image": req.body.moma_image,
-        "Email": req.body.email
+        "Email": req.body.email,
+        "Email w/ Comma": req.body.email,
+        "Start Date": req.body.start_date,
+        "Favorited": "no"
       }
       const addData = await db.collection('ctrroster').add(data)
       res.render('form')
