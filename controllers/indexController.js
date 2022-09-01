@@ -23,7 +23,8 @@ async function login(req, res, next){
       if (user) {
         const authToken = generateAuthToken();
         authTokens[authToken] = user;
-        res.cookie('AuthToken', authToken);
+        res.cookie('AuthToken', authToken)
+        res.cookie('Username', req.body.username)
         res.redirect('home')
         return;
       }
