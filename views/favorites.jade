@@ -1,27 +1,3 @@
 extends layout
 block bodyContent
-  each item in roster
-    div
-      .container.mt-5.mb-5
-        .row.no-gutters
-          .col-md-4.col-lg-4
-            img(src=item.get('MOMA Image') width='400' height='400')
-          .col-md-8.col-lg-8
-            .d-flex.flex-column
-              .d-flex.flex-row.justify-content-between.align-items-center.p-5.bg-dark.text-white
-                h3.display-5=item.get('Name')
-              .p-3.bg-black.text-white
-                h6=item.get("P. Role")
-                h7=item.get(escape("P. Org"))
-              .d-flex.flex-row.text-white
-                .p-4.bg-primary.text-center.skill-block
-                  h4="Year Start"
-                  h6=item.get('Year Start')
-                .p-3.bg-success.text-center.skill-block
-                  h4=item.get('Cohort')
-                  h6=item.get('Cohort Manager')
-                .p-3.bg-warning.text-center.skill-block
-                  h4=item.get('LDAP')
-                  h6=item.get('Email')
-                .p-3.bg-danger.text-center.skill-block
-                  a.btn.btn-dark(href=item.get('MOMA Link')) Moma Link
+  h1 TO BE IMPLEMENTED
