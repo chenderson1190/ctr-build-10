@@ -14,7 +14,7 @@ const generateAuthToken = () => {
 const authTokens = {}
 
 function render_index(req, res){
-    res.render('index', {title: 'Sign in'})
+    res.render('index', {title: 'Sign In'})
 }
 
 async function login(req, res, next){

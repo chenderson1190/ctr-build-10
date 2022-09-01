@@ -7,7 +7,7 @@ const db = new Firestore({
 });
 
 function render_form(req, res){
-    res.render('form')
+    res.render('form', { title: 'Form - Cloud Technical Roster' })
 }
 
 async function add_data(req, res){
