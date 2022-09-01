@@ -6,41 +6,36 @@ const db = new Firestore({
   keyFilename: './ctr-build-10-945db5e1aa0d.json',
 });
 
-async function get_roster_data(username){
-    const data = await db.collection('users').doc(username).get('favorites');
-    //const display_data = await db.collection('ctrroster').get
-    if (!data.exists){
-        return -1
-      }
-      else {
-        return data
-      }
-  }
 async function get_favorites(username){
-    console.log(username)
-    const data = await db.collection('users').doc('test user')
-    //const doc = await data.get()
-    //const display_data = await db.collection('ctrroster').get
+    const data = await db.collection('users').doc('test user').get()
+
     if (data.empty){
         console.log('not found')
         return -1
       }
       else {
-        //console.log(data.get('favorites'))
         return data
       }
 }
-function render_favorites(req, res){
-    console.log('auth token:', req.cookies['AuthToken'], "username:", req.cookies['Username'])
-    get_favorites(req.cookies['Username']).then(result => {
-        console.log(result.get('favorites'))
-    })
-    if(req.cookies['AuthToken']) {
-        res.render('favorites', { title: 'Favorites - Cloud Technical Roster', roster: ['placeholder']});
-    }
-    else {
-        res.render('error')
-    }
+async function render_favorites(req, res){
+        get_favorites(req.cookies['Username']).then(async result => {
+            var favs = []
+            const favs_list = []
+            favs = Object.values(result.get('favorites'))
+            favs.forEach(async item => {
+                const data = await db.collection('ctrroster').doc(favs[0]).get().then(function(result){
+                    favs_list.push(result)
+                })
+                if(req.cookies['AuthToken']) {
+                    res.render('favorites', { title: 'Favorites - Cloud Technical Roster', roster: favs_list});
+                }
+                else {
+                    res.render('nofavorites')
+                }
+            })
+            
+        })
+    
 }
 
 module.exports = {render_favorites}

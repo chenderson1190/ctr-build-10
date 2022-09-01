@@ -34,11 +34,11 @@ block bodyContent
             .d-flex.flex-column
               .d-flex.flex-row.justify-content-between.align-items-center.p-5.bg-dark.text-white
                 h3.display-5=item.get('Name')
-
-                label.checkbox-inline
-                  input(type='checkbox' data-toggle='toggle')
-                  |  Favorite
-               
+                form(action="", method="post") 
+                  label.checkbox-inline
+                    input(name='favorite_button' type='checkbox' data-toggle='toggle')
+                    |  Favorite
+                    
               .d-flex.flex-row.justify-content-between.p-5.text-white
                 .p-4.bg-primary.text-center.skill-block
                   h4="Year Start"
