@@ -1,5 +1,4 @@
 var express = require('express');
-var jQuery = require('jquery');
 var router = express.Router();
 var listController = require('../controllers/listController')
 var formController = require('../controllers/formController')
