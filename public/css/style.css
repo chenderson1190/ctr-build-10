@@ -1,0 +1,13 @@
+body{
+    min-height: 100vh;
+}
+
+/* Sticky Footer */
+
+.sticky-footer{
+    position: sticky;
+    top: 100%
+}
+
+
+
