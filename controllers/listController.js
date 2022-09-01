@@ -30,7 +30,7 @@ function display_list(req, res){
         ctrroster.push(doc)
         //console.log(ctrroster)
     })
-    res.render('list', {roster: ctrroster})
+    res.render('list', {title: 'List - Cloud Technical Roster', roster: ctrroster})
 })}
 
 module.exports = {get_roster_data, display_list}

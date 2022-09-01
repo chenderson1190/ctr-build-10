@@ -36,7 +36,7 @@ function render_favorites(req, res){
         console.log(result.get('favorites'))
     })
     if(req.cookies['AuthToken']) {
-        res.render('favorites', { roster: ['placeholder']});
+        res.render('favorites', { title: 'Favorites - Cloud Technical Roster', roster: ['placeholder']});
     }
     else {
         res.render('error')
