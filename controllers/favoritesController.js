@@ -1,5 +1,10 @@
 function render_favorites(req, res){
-    res.render('favorites');
+    if(req.cookies['AuthToken']) {
+        res.render('favorites');
+    }
+    else {
+        res.render('error')
+    }
 }
 
 module.exports = {render_favorites}
