@@ -12,10 +12,16 @@ html
         #navbarSupportedContent.collapse.navbar-collapse
           ul.navbar-nav.ms-auto.mb-2.mb-lg-0
             li.nav-item
-              a.nav-link.active(aria-current='Home' href='/list') List
+              a.nav-link(aria-current='Home' href='/list') List
             li.nav-item
               a.nav-link(href='/form') Form
             li.nav-item
               a.nav-link(href='/favorites') Favorites
 body
   block bodyContent
+  footer.bg-light.text-center.text-lg-start
+  // Copyright
+  .text-center.p-3(style='background-color: rgba(0, 0, 0, 0.2);')
+    | © 2022 Cloud Technical Residency
+    // <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    // Copyright
