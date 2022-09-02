@@ -35,7 +35,7 @@ block bodyContent
                 .d-flex.flex-row.justify-content-between.align-items-center.p-5.bg-dark.text-white
                   h3.display-5=item.get('Name')
                   form(action='' method='post')
-                    button(id='heart' type='button' class="btn btn-danger" onClick="add_fave()") 
+                    button(id='heart' type='submit' name="favorite" class="btn btn-danger") 
                       img(src='img/heart.svg')
                 
   

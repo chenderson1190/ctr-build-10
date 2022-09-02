@@ -21,10 +21,13 @@ router.get('/form', formController.render_form)
 // POST Update Form Information
 router.post('/form', formController.add_data)
 
+// POST Favorite Information
+router.post('/list', listController.add_fave)
+
 // GET List
 router.get('/list', listController.display_list)
 
-router.get('/list', listController.add_fave)
+
 
 // GET Favorites
 router.get('/favorites', favoritesController.render_favorites)
