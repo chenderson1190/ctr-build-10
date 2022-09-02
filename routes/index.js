@@ -24,6 +24,8 @@ router.post('/form', formController.add_data)
 // GET List
 router.get('/list', listController.display_list)
 
+router.get('/list', listController.add_fave)
+
 // GET Favorites
 router.get('/favorites', favoritesController.render_favorites)
 

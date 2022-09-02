@@ -8,7 +8,7 @@ const db = new Firestore({
 
 async function get_favorites(username){
     const data = await db.collection('users').doc('test user').get()
-
+    
     if (data.empty){
         console.log('not found')
         return -1
