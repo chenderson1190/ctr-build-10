@@ -6,6 +6,7 @@ const db = new Firestore({
   keyFilename: './ctr-build-10-945db5e1aa0d.json',
 });
 
+
 /**
  * gets roster data from ctrroster collection
  * @returns Roster Data in form of a list of Documents in Collection
@@ -33,4 +34,23 @@ function display_list(req, res){
     res.render('list', {title: 'List - Cloud Technical Roster', roster: ctrroster})
 })}
 
-module.exports = {get_roster_data, display_list}
+async function add_fave(req, res){
+    let fave = {
+        "Name": req.body.name,
+        "LDAP": req.body.ldap,
+        "Year Start": Number(req.body.year),
+        "P. Org": req.body.text3,
+        "P. Role": req.body.text4,
+        "Cohort": req.body.cohort,
+        "Cohort Manager": req.body.select,
+        "MOMA Link": req.body.moma_link,
+        "MOMA Image": req.body.moma_image,
+        "Email": req.body.email,
+        "Email w/ Comma": req.body.email,
+        "Start Date": req.body.start_date,
+        "Favorited": "yes"
+      }
+      await db.collection('user').doc('test user').add(fave)
+}
+
+module.exports = {get_roster_data, display_list, add_fave}
