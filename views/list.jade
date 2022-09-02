@@ -26,32 +26,31 @@ block bodyContent
     title List - Cloud Technical Roster
   each item in roster
     div
-      .container.mt-5.mb-5
-        .row.no-gutters
-          .col
-            img(src=item.get('MOMA Image') width='400' height='400')
-          .col
-            .d-flex.flex-column
-              .d-flex.flex-row.justify-content-between.align-items-center.p-5.bg-dark.text-white
-                h3.display-5=item.get('Name')
-                form(action="", method="post") 
-                  label.checkbox-inline
-                    input(name='favorite_button' type='checkbox' data-toggle='toggle')
-                    |  Favorite
-                    
-              .d-flex.flex-row.justify-content-between.p-5.text-white
-                .p-4.bg-primary.text-center.skill-block
-                  h4="Year Start"
-                  h6=item.get('Year Start')
-                .p-3.bg-success.text-center.skill-block
-                  h4=item.get('Cohort')
-                  h6=item.get('Cohort Manager')
-                .p-3.bg-warning.text-center.skill-block
-                  h4=item.get('LDAP')
-                  h6=item.get('Email')
-                .p-3.bg-danger.text-center.skill-block
-                  a.btn.btn-dark(href=item.get('MOMA Link')) Moma Link
+        .container.mt-5.mb-5
+          .row.no-gutters
+            .col
+              img(src=item.get('MOMA Image') width='400' height='400')
+            .col
+              .d-flex.flex-column
+                .d-flex.flex-row.justify-content-between.align-items-center.p-5.bg-dark.text-white
+                  h3.display-5=item.get('Name')
+                  form(action='/favorites' method="POST") 
+                    button(type='button' class="btn btn-danger")
+                      img(src='img/heart.svg')
+  
+                .d-flex.flex-row.justify-content-between.p-5.text-white
+                  .p-4.bg-primary.text-center.skill-block
+                    h4="Year Start"
+                    h6=item.get('Year Start')
+                  .p-3.bg-success.text-center.skill-block
+                    h4=item.get('Cohort')
+                    h6=item.get('Cohort Manager')
+                  .p-3.bg-warning.text-center.skill-block
+                    h4=item.get('LDAP')
+                    h6=item.get('Email')
+                  .p-3.bg-danger.text-center.skill-block
+                    a.btn.btn-dark(href=item.get('MOMA Link')) Moma Link
 
-                  
-            
+                    
+              
 
